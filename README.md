@@ -330,7 +330,7 @@ The dashboard analyzes:
 
 # Team
 
-Dhruvin Mahadik
+CODe77
 
 Far Away Hackathon 2026
 

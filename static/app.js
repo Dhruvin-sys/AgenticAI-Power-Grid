@@ -1067,7 +1067,7 @@ function startAutoRefresh() {
   setInterval(async () => {
     const data = await fetchAnalysis();
     renderAll(data);
-  }, 900000);
+  }, );
 }
 
 // ── SIDEBAR NAV ───────────────────────────────────────────────

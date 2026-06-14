@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GridMind AI — Agentic Power Grid Intelligence</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ══ LOADING OVERLAY ════════════════════════════════════════ -->
+<div class="loading-overlay" id="loading-overlay">
+  <div class="loader-ring"></div>
+  <div class="loader-text">GRIDMIND AI INITIALIZING...</div>
+</div>
+
+<div class="layout">
+
+  <!-- ══ TOP NAVIGATION ═══════════════════════════════════════ -->
+  <nav class="topnav">
+    <a href="#" class="logo">
+      <div class="logo-icon">⚡</div>
+      Grid<span>Mind</span> AI
+    </a>
+
+    <div class="nav-divider"></div>
+
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      LIVE SYSTEM
+    </div>
+
+    <div class="nav-divider"></div>
+
+    <div class="nav-clock">--:--:--</div>
+
+    <div class="nav-divider"></div>
+
+    <div class="nav-zone">ZONE: GRID-ALPHA-7</div>
+
+    <div class="nav-spacer"></div>
+
+    <div class="agent-badge">
+      <div class="agent-badge-dot"></div>
+      AGENT: <span class="agent-badge-text">Monitoring</span>
+    </div>
+
+    <div class="nav-divider"></div>
+
+    <button class="notif-btn" title="Alerts">
+      🔔
+      <span class="notif-count">3</span>
+    </button>
+  </nav>
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-label">Overview</div>
+    <a class="nav-item active" data-target="#kpi-section">
+      <span class="nav-icon">📊</span> KPI Overview
+    </a>
+    <a class="nav-item" data-target="#twin-section">
+      <span class="nav-icon">🗺</span> Digital Twin
+    </a>
+
+    <div class="sidebar-label">Analytics</div>
+    <a class="nav-item" data-target="#charts-section">
+      <span class="nav-icon">📈</span> Grid Physics
+    </a>
+    <a class="nav-item" data-target="#predict-section">
+      <span class="nav-icon">🔮</span> Predictive
+    </a>
+    <a class="nav-item" data-target="#gauges-section">
+      <span class="nav-icon">🎯</span> Stress Monitor
+    </a>
+
+    <div class="sidebar-label">Intelligence</div>
+    <a class="nav-item" data-target="#ai-section">
+      <span class="nav-icon">🤖</span> AI Command
+    </a>
+    <a class="nav-item" data-target="#alerts-section">
+      <span class="nav-icon">🔔</span> Alert Center
+    </a>
+
+    <div class="sidebar-label">Control</div>
+    <a class="nav-item" data-target="#input-section">
+      <span class="nav-icon">⚙️</span> Input Panel
+    </a>
+
+    <div class="sidebar-footer">
+      v2.4.1 · GridMind AI<br>
+      © 2025 Agentic Grid Systems
+    </div>
+  </aside>
+
+  <!-- ══ MAIN CONTENT ══════════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- Summary Bar -->
+    <div class="summary-bar"></div>
+
+    <!-- ── SECTION 1: KPI OVERVIEW ─────────────────────────── -->
+    <section id="kpi-section">
+      <div class="section-header">
+        <div class="section-title">Executive KPI Overview</div>
+        <div class="section-line"></div>
+        <div class="section-tag">REAL-TIME · AUTO-REFRESH 15s</div>
+      </div>
+
+      <section id="executive-summary">
+
+        <div class="section-header">
+          <div class="section-title">Executive Summary</div>
+          <div class="section-line"></div>
+          <div class="section-tag">AI DECISION ENGINE</div>
+        </div>
+
+      <section id="decision-history">
+
+      <div class="section-header">
+        <div class="section-title">AI Decision History</div>
+        <div class="section-line"></div>
+        <div class="section-tag">LAST 10 EVENTS</div>
+      </div>
+
+      <div class="glass" style="padding:20px;">
+          <div id="history-list">
+              Waiting for AI decisions...
+          </div>
+      </div>
+
+    </section>
+
+        <div class="glass" style="padding:20px;">
+
+          <h3 id="exec-alert">Loading...</h3>
+
+          <p id="exec-root">Loading...</p>
+
+          <p id="exec-action">Loading...</p>
+
+        </div>
+
+      </section>
+
+      <div class="kpi-grid">
+        <!-- Populated by JS -->
+        <div class="glass kpi-card"><div class="skeleton" style="height:100px"></div></div>
+        <div class="glass kpi-card"><div class="skeleton" style="height:100px"></div></div>
+        <div class="glass kpi-card"><div class="skeleton" style="height:100px"></div></div>
+        <div class="glass kpi-card"><div class="skeleton" style="height:100px"></div></div>
+      </div>
+    </section>
+
+    <!-- ── LIVE GRID FEED ─────────────────────────── -->
+<section id="grid-feed-section">
+  <div class="section-header">
+    <div class="section-title">Live Grid Feed</div>
+    <div class="section-line"></div>
+    <div class="section-tag">ELECTRICITY MAPS API</div>
+  </div>
+
+  <div class="glass" style="padding:20px;">
+    <div style="display:flex;gap:30px;flex-wrap:wrap;">
+
+      <div>
+        <h3 id="region">Loading...</h3>
+      </div>
+
+      <div>
+        <h3 id="country">Loading...</h3>
+      </div>
+
+      <div>
+        <h3 id="zone">Loading...</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- ── SECTION 2: DIGITAL TWIN ─────────────────────────── -->
+    <section id="twin-section">
+      <div class="section-header">
+        <div class="section-title">Digital Twin</div>
+        <div class="section-line"></div>
+        <div class="section-tag">LIVE POWER FLOW SIMULATION</div>
+      </div>
+      <div class="glass twin-wrapper">
+        <div class="twin-canvas">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 3: GRID PHYSICS ──────────────────────────── -->
+    <section id="charts-section">
+      <div class="section-header">
+        <div class="section-title">Grid Physics Visualization</div>
+        <div class="section-line"></div>
+        <div class="section-tag">INTERACTIVE CHARTS</div>
+      </div>
+      <div class="charts-grid">
+        <div class="glass chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-title">Power Flow Analysis</div>
+              <div class="chart-subtitle">Input · Output · Reactive · Loss (kVA/kVAR/kW)</div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-power-flow"></canvas>
+          </div>
+        </div>
+
+        <div class="glass chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-title">Voltage &amp; Current Analysis</div>
+              <div class="chart-subtitle">Measured vs Rated — V &amp; A</div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-volt-curr"></canvas>
+          </div>
+        </div>
+
+        <div class="glass chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-title">Grid Utilization Trend</div>
+              <div class="chart-subtitle">Demand · Generation · Supply Margin (kW)</div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-grid-util"></canvas>
+          </div>
+        </div>
+
+        <div class="glass chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-title">Grid Health Trend</div>
+              <div class="chart-subtitle">Health · Failure Probability · Efficiency (Historical)</div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-health-trend"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 4: AI COMMAND CENTER ─────────────────────── -->
+    <section id="ai-section">
+      <div class="section-header">
+        <div class="section-title">Agentic AI Command Center</div>
+        <div class="section-line"></div>
+        <div class="section-tag">AUTONOMOUS DECISION ENGINE</div>
+      </div>
+      <div class="glass ai-center">
+        <div class="ai-header-row">
+          <div
+    id="ai-system-status"
+    style="
+        margin-bottom:15px;
+        padding:12px;
+        border-radius:10px;
+        text-align:center;
+        font-weight:bold;
+        font-size:1.1rem;
+        background:#0f172a;
+    ">
+    ANALYZING GRID...
+</div>
+          <div class="ai-orb">🤖</div>
+          <div class="ai-title-block">
+            <div class="ai-title">GridMind Diagnostic Engine</div>
+            <div class="ai-subtitle">Agentic AI · Industry 5.0 · Predictive Intelligence</div>
+          </div>
+        </div>
+
+        <div class="ai-grid">
+          <!-- Diagnosis -->
+          <div class="ai-diagnosis-box" style="grid-column: 1/-1">
+            <div class="ai-diagnosis-title">🔍 AI Diagnosis — Root Cause</div>
+            <div class="ai-diagnosis-text">Initializing diagnostic engine...</div>
+          </div>
+
+          <!-- Confidence -->
+          <div class="ai-metric-box">
+            <div class="ai-metric-label">Confidence Score</div>
+            <div class="ai-metric-value ai-conf-value">—</div>
+            <div class="ai-confidence-bar">
+              <div class="ai-confidence-fill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- Risk -->
+          <div class="ai-metric-box" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.5rem">
+            <div class="ai-metric-label">Risk Level</div>
+            <div class="risk-badge risk-high ai-risk-badge">—</div>
+          </div>
+
+          <!-- Power Factor -->
+          <div class="ai-metric-box">
+            <div class="ai-metric-label">Power Factor</div>
+            <div class="ai-metric-value ai-pf-value">—</div>
+          </div>
+
+          <!-- Thermal -->
+          <div class="ai-metric-box">
+            <div class="ai-metric-label">Thermal Status</div>
+            <div class="ai-metric-value" id="ai-thermal-val" style="color:#ff3b5c">—</div>
+          </div>
+
+          <!-- Recommendation -->
+          <div class="ai-recommendation">
+            <span class="ai-rec-icon">💡</span>
+            <div>
+              <div class="ai-rec-label">Recommended Action</div>
+              <div class="ai-rec-text">Awaiting analysis...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+            <!-- Alert Status -->
+        <div class="ai-metric-box">
+          <div class="ai-metric-label">Alert Level</div>
+          <div
+            id="ai-alert-level"
+            class="ai-metric-value"
+            style="font-size:1.2rem;"
+          >
+            LOADING...
+          </div>
+        </div>
+
+        <!-- Sustainability -->
+        <div class="ai-metric-box">
+          <div class="ai-metric-label">Sustainability Score</div>
+          <div
+            id="ai-sustainability"
+            class="ai-metric-value"
+          >
+            --
+          </div>
+        </div>
+
+        <!-- Carbon Intensity -->
+        <div class="ai-metric-box">
+          <div class="ai-metric-label">Carbon Intensity</div>
+          <div
+            id="ai-carbon"
+            class="ai-metric-value"
+          >
+            --
+          </div>
+        </div>
+
+        <!-- Renewable Share -->
+        <div class="ai-metric-box">
+          <div class="ai-metric-label">Renewable Energy</div>
+          <div
+            id="ai-renewable"
+            class="ai-metric-value"
+          >
+            --
+          </div>
+        </div>
+
+    <!-- ── SECTION 5: PREDICTIVE ANALYTICS ──────────────────── -->
+    <section id="predict-section">
+      <div class="section-header">
+        <div class="section-title">Predictive Analytics</div>
+        <div class="section-line"></div>
+        <div class="section-tag">FORECAST HORIZON: 1H / 24H</div>
+      </div>
+      <div class="predict-grid">
+        <div class="glass predict-card">
+          <div class="predict-header">📅 Health Score Forecast</div>
+          <div class="forecast-row">
+            <span class="forecast-label">Next 1 Hour</span>
+            <span class="forecast-val text-green font-mono" id="pred-h1-health">—</span>
+          </div>
+          <div class="forecast-row">
+            <span class="forecast-label">Next 24 Hours</span>
+            <span class="forecast-val text-amber font-mono" id="pred-h24-health">—</span>
+          </div>
+          <div class="forecast-row">
+            <span class="forecast-label">Grid Stability</span>
+            <span class="forecast-val font-mono" id="pred-stability">—</span>
+          </div>
+          <div style="margin-top:1rem">
+            <canvas id="gauge-h1-risk" style="display:block;margin:auto"></canvas>
+          </div>
+        </div>
+
+        <div class="glass predict-card">
+          <div class="predict-header">⚠️ Failure Risk Forecast</div>
+          <div class="forecast-row">
+            <span class="forecast-label">Risk in 1 Hour</span>
+            <span class="forecast-val text-amber font-mono" id="pred-h1-risk">—</span>
+          </div>
+          <div class="forecast-row">
+            <span class="forecast-label">Risk in 24 Hours</span>
+            <span class="forecast-val text-red font-mono" id="pred-h24-risk">—</span>
+          </div>
+          <div class="forecast-row">
+            <span class="forecast-label">Recommended Action</span>
+            <span class="forecast-val text-cyan font-mono" style="font-size:.72rem">Inspect / Monitor</span>
+          </div>
+          <div style="margin-top:1rem">
+            <canvas id="gauge-h24-risk" style="display:block;margin:auto"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 6: STRESS GAUGES ─────────────────────────── -->
+    <section id="gauges-section">
+      <div class="section-header">
+        <div class="section-title">Grid Stress Monitor</div>
+        <div class="section-line"></div>
+        <div class="section-tag">RADIAL GAUGES · LIVE</div>
+      </div>
+      <div class="gauge-grid">
+        <div class="glass gauge-card">
+          <canvas id="gauge-stress"></canvas>
+          <div class="gauge-value text-cyan" id="gauge-stress-val">—</div>
+          <div class="gauge-label">Grid Stress</div>
+        </div>
+        <div class="glass gauge-card">
+          <canvas id="gauge-pf"></canvas>
+          <div class="gauge-value text-green" id="gauge-pf-val">—</div>
+          <div class="gauge-label">Power Factor</div>
+        </div>
+        <div class="glass gauge-card">
+          <canvas id="gauge-freq"></canvas>
+          <div class="gauge-value text-cyan" id="gauge-freq-val">—</div>
+          <div class="gauge-label">Freq Stability</div>
+        </div>
+        <div class="glass gauge-card">
+          <canvas id="gauge-thermal"></canvas>
+          <div class="gauge-value text-red" id="gauge-thermal-val">—</div>
+          <div class="gauge-label">Thermal Risk</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 7: ALERT CENTER ───────────────────────────── -->
+    <section id="alerts-section">
+      <div class="section-header">
+        <div class="section-title">Real-Time Alert Center</div>
+        <div class="section-line"></div>
+        <div class="section-tag">AUTO-GENERATED · SEVERITY RANKED</div>
+      </div>
+      <div class="glass" style="padding:1.25rem">
+        <div class="alerts-list">
+          <!-- Populated by JS -->
+          <div class="alert-item alert-info">
+            <span class="alert-icon">⟳</span>
+            <div class="alert-content">
+              <div class="alert-title">Loading alerts...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 8: INPUT PANEL ────────────────────────────── -->
+    <section id="input-section">
+      <div class="section-header">
+        <div class="section-title">Advanced Input Panel</div>
+        <div class="section-line"></div>
+        <div class="section-tag">CONFIGURE &amp; TRIGGER AI ANALYSIS</div>
+      </div>
+      <div class="glass input-panel">
+        <div class="input-grid">
+          <div class="input-group">
+            <label class="input-label" for="input-voltage">Voltage (V)</label>
+            <input class="input-field" id="input-voltage" type="number" placeholder="e.g. 225" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-current">Current (A)</label>
+            <input class="input-field" id="input-current" type="number" placeholder="e.g. 11" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-pf">Power Factor Angle</label>
+            <input class="input-field" id="input-pf" type="number" step="0.001" placeholder="e.g. 0.866" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-resistance">Resistance (Ω)</label>
+            <input class="input-field" id="input-resistance" type="number" step="0.1" placeholder="e.g. 2.5" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-equip_temp">Equipment Temp (°C)</label>
+            <input class="input-field" id="input-equip_temp" type="number" placeholder="e.g. 75" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-ambient_temp">Ambient Temp (°C)</label>
+            <input class="input-field" id="input-ambient_temp" type="number" placeholder="e.g. 35" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-demand">Demand (kW)</label>
+            <input class="input-field" id="input-demand" type="number" placeholder="e.g. 900" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-generation">Generation (kW)</label>
+            <input class="input-field" id="input-generation" type="number" placeholder="e.g. 1000" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="input-frequency">Frequency (Hz)</label>
+            <input class="input-field" id="input-frequency" type="number" step="0.01" placeholder="e.g. 49.8" />
+          </div>
+        </div>
+
+        <button class="run-btn" id="run-analysis-btn">▶ RUN AI ANALYSIS</button>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+</div><!-- /layout -->
+
+<script src="/static/app.js"></script>
+</body>
+</html>

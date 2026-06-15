@@ -14,8 +14,12 @@ def log_raw_data(data):
     df = pd.DataFrame([row])
 
     if os.path.exists(filename):
-        old = pd.read_excel(filename)
-        df = pd.concat([old, df], ignore_index=True)
+        try:
+            old = pd.read_excel(filename)
+        except:
+            old = pd.DataFrame()
+
+    df = pd.concat([old, df], ignore_index=True)
 
     df.to_excel(filename, index=False)
 
@@ -34,7 +38,11 @@ def log_analysis_data(data):
 
     if os.path.exists(filename):
 
-        old = pd.read_excel(filename)
+        try:
+            old = pd.read_excel(filename)
+        except:
+            old = pd.DataFrame()
+
 
         if not old.empty:
 

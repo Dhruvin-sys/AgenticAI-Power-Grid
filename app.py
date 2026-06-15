@@ -16,7 +16,7 @@ def home():
 def analyze():
 
     grid_data = get_grid_data()
-    log_raw_data(grid_data)
+    #log_raw_data(grid_data)
 
     print("LIVE GRID DATA:", grid_data)
 
